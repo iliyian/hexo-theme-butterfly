@@ -1088,7 +1088,8 @@ CDN:
     # mathjax:
     # medium_zoom:
     # mermaid:
-    # meting_js:
+    meting_js: /js/Meting.min.js
+    # pangu:
     # prismjs_autoloader:
     # prismjs_js:
     # prismjs_lineNumber_js:

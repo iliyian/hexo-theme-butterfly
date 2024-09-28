@@ -946,7 +946,7 @@ CDN:
     # artalk_css:
     # artalk_js:
     # blueimp_md5:
-    # busuanzi:
+    busuanzi: https://busuanzi.iliyian.com/js
     # canvas_fluttering_ribbon:
     # canvas_nest:
     # canvas_ribbon:

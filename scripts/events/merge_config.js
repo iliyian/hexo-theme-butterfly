@@ -545,12 +545,9 @@ hexo.extend.filter.register('before_generate', () => {
       bg_dark: '#1f1f1f'
     },
     instantpage: false,
-    pangu: {
-      enable: false,
-      field: 'site'
-    },
     lazyload: {
       enable: false,
+      native: false,
       field: 'site',
       placeholder: null,
       blur: false

@@ -699,6 +699,7 @@ umami_analytics:
   enable: false
   # For self-hosted setups, configure the hostname of the Umami instance
   serverURL:
+  script_name: script.js
   website_id:
   option:
   UV_PV:

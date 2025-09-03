@@ -1,4 +1,4 @@
-- let { serverURL, website_id, option, UV_PV } = theme.umami_analytics
+- let { serverURL, script_name, website_id, option, UV_PV } = theme.umami_analytics
 - const isServerURL = !!serverURL
 - const baseURL = serverURL ? serverURL.replace(/\/$/, '') : 'https://cloud.umami.is'
 - const apiUrl = serverURL ? serverURL.replace(/\/$/, '') + '/api' : 'https://api.umami.is/v1'
@@ -17,7 +17,7 @@ script.
     }
 
     const loadUmamiJS = () => {
-      btf.getScript('!{baseURL}/script.js', {
+      btf.getScript('!{baseURL}/!{script_name}', {
         'data-website-id': '!{website_id}',
         'data-auto-track': 'false',
         ...option

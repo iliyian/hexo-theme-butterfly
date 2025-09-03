@@ -404,6 +404,7 @@ module.exports = {
   umami_analytics: {
     enable: false,
     serverURL: null,
+    script_name: 'script.js',
     website_id: null,
     option: null,
     UV_PV: {

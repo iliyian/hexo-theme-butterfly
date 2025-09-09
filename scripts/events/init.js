@@ -1,6 +1,5 @@
 const { deepMerge } = require('hexo-util')
 const path = require('path')
-const fs = require('fs')
 
 // Cache default config to avoid repeated file reads
 let cachedDefaultConfig = null

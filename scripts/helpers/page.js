@@ -53,7 +53,7 @@ hexo.extend.helper.register('urlNoIndex', function (url = null, trailingIndex = 
 })
 
 hexo.extend.helper.register('md5', function (path) {
-  return crypto.createHash('md5').update(decodeURI(this.url_for(path, {relative: false}))).digest('hex')
+  return crypto.createHash('md5').update(decodeURI(this.url_for(path, { relative: false }))).digest('hex')
 })
 
 hexo.extend.helper.register('injectHtml', data => {
@@ -70,7 +70,7 @@ hexo.extend.helper.register('findArchivesTitle', function (page, menu, date) {
   const defaultTitle = this._p('page.archives')
   if (!menu) return defaultTitle
 
-  const loop = (m) => {
+  const loop = m => {
     for (const key in m) {
       if (typeof m[key] === 'object') {
         const result = loop(m[key])
@@ -86,7 +86,7 @@ hexo.extend.helper.register('findArchivesTitle', function (page, menu, date) {
   return loop(menu) || defaultTitle
 })
 
-hexo.extend.helper.register('getBgPath', function(path) {
+hexo.extend.helper.register('getBgPath', function (path) {
   if (!path) return ''
 
   const absoluteUrlPattern = /^(?:[a-z][a-z\d+.-]*:)?\/\//i
@@ -132,6 +132,8 @@ hexo.extend.helper.register('shuoshuoFN', (data, page) => {
   finalResult.forEach(item => {
     const utcDate = moment.utc(item.date).format('YYYY-MM-DD HH:mm:ss')
     item.date = moment.tz(utcDate, hexo.config.timezone).format('YYYY-MM-DD HH:mm:ss')
+    // markdown
+    item.content = hexo.render.renderSync({ text: item.content, engine: 'markdown' })
   })
 
   return finalResult

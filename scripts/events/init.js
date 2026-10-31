@@ -17,7 +17,7 @@ function checkHexoEnvironment (hexo) {
   if (major < requiredMajor || (major === requiredMajor && minor < requiredMinor)) {
     log.error('Please update Hexo to V5.3.0 or higher!')
     log.error('請把 Hexo 升級到 V5.3.0 或更高的版本！')
-    process.exit(-1)
+    throw new Error('Hexo version too old')
   }
 
   // Check for deprecated configuration file
@@ -26,7 +26,7 @@ function checkHexoEnvironment (hexo) {
     if (data && data.butterfly) {
       log.error("'butterfly.yml' is deprecated. Please use '_config.butterfly.yml'")
       log.error("'butterfly.yml' 已經棄用，請使用 '_config.butterfly.yml'")
-      process.exit(-1)
+      throw new Error('Deprecated configuration file')
     }
   }
 }

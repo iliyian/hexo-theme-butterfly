@@ -91,7 +91,8 @@ category_per_img:
 footer_img: false
 
 # Website Background
-# Can set it to color or image url
+# Can set it to color, image URL or an array containing colors and/or image URLs
+# If an array is provided, a random background will be selected from the array on each load
 background:
 
 cover:
@@ -318,6 +319,7 @@ aside:
     # If set 0 will show all
     limit: 40
     color: false
+    custom_colors:
     # Order of tags, random/name/length
     orderby: random
     # Sort of order. 1, asc for ascending; -1, desc for descending
@@ -425,7 +427,6 @@ copy:
     enable: false
     limit_count: 150
 
-# Need to install the hexo-wordcount plugin
 wordcount:
   enable: false
   # Display the word count of the article in post meta
@@ -515,12 +516,12 @@ share:
   # Share.js
   # https://github.com/overtrue/share.js
   sharejs:
-    sites: facebook,twitter,wechat,weibo,qq
+    sites: facebook,x,wechat,weibo,qq
 
   # AddToAny
   # https://www.addtoany.com/
   addtoany:
-    item: facebook,twitter,wechat,sina_weibo,facebook_messenger,email,copy_link
+    item: facebook,x,wechat,sina_weibo,facebook_messenger,email,copy_link
 
 # --------------------------------------
 # Comments System
@@ -650,6 +651,7 @@ artalk:
   site:
   # Use Artalk visitor count as the page view count
   visitor: false
+  vote: false
   option:
 
 # --------------------------------------
@@ -657,7 +659,7 @@ artalk:
 # --------------------------------------
 
 chat:
-  # Choose: chatra/tidio/crisp
+  # Choose: chatra/tidio/crisp/knocket
   # Leave it empty if you don't need chat
   use:
   # Chat Button [recommend]
@@ -677,6 +679,10 @@ tidio:
 # https://crisp.chat/en/
 crisp:
   website_id:
+
+# https://trtc.io/solutions/knocket
+knocket:
+  identifier:
 
 # --------------------------------------
 # Analysis
@@ -938,6 +944,10 @@ mermaid:
   theme:
     light: default
     dark: dark
+  # Enable "Open in New Tab" button to view diagram in a separate window
+  open_in_new_tab: true
+  # Enable zoom and pan interactions on diagrams
+  zoom_pan: true
 
 # chartjs
 # see https://www.chartjs.org/docs/latest/
@@ -982,11 +992,6 @@ pjax:
   # Exclude the specified pages from pjax, such as '/music/'
   exclude:
     # - /xxxxxx/
-
-# Inject the css and script (aplayer/meting)
-aplayerInject:
-  enable: false
-  per_page: true
 
 # Snackbar - Toast Notification
 # https://github.com/polonel/SnackBar
@@ -1040,7 +1045,7 @@ Open_Graph_meta:
 # Structured Data
 # https://developers.google.com/search/docs/guides/intro-structured-data
 structured_data:
-  enable: true
+  enable: false
   # Alternate name for the site, used in structured data
   # Format: ['name1', 'name2']
   alternate_name:
@@ -1067,7 +1072,7 @@ CDN:
   third_party_provider: jsdelivr
 
   # Add version number to url, true or false
-  version: false
+  version: true
 
   # Custom format
   # For example: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
@@ -1078,8 +1083,6 @@ CDN:
     # activate_power_mode:
     # algolia_js:
     # algolia_search:
-    # aplayer_css:
-    # aplayer_js:
     # artalk_css:
     # artalk_js:
     # blueimp_md5:
@@ -1112,8 +1115,6 @@ CDN:
     # mathjax:
     # medium_zoom:
     # mermaid:
-    meting_js: /js/Meting.min.js
-    # pangu:
     # prismjs_autoloader:
     # prismjs_js:
     # prismjs_lineNumber_js:

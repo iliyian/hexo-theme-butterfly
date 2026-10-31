@@ -43,13 +43,13 @@
           if theme.wordcount.post_wordcount
             i.far.fa-file-word.fa-fw.post-meta-icon
             span.post-meta-label= _p('post.wordcount') + ':'
-            span.word-count= wordcount(page.content)
+            span.word-count= wordcount(page)
             if theme.wordcount.min2read
               span.post-meta-separator |
           if theme.wordcount.min2read
             i.far.fa-clock.fa-fw.post-meta-icon
             span.post-meta-label= _p('post.min2read') + ':'
-            span= min2read(page.content, {cn: 350, en: 160}) + _p('post.min2read_unit')
+            span= min2read(page) + ' ' + _p('post.min2read_unit')
 
       //- for pv and count
       mixin pvBlock(parent_id, parent_class, parent_title)

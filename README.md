@@ -124,7 +124,6 @@ npm install hexo-renderer-pug hexo-renderer-stylus --save
 - [x] **Theme Customization** - Custom site color schemes
 - [x] **Chart Support** - Mermaid flowcharts/Chart.js data charts
 - [x] **Music Notation** - ABCJS music notation support
-- [x] **Music Player** - APlayer/Meting music playback
 - [x] **Article Series** - Series article organization
 - [x] **Instantpage** - Page preloading acceleration
 - [x] **Snackbar** - Elegant notification messages
@@ -152,7 +151,7 @@ Thanks to all the developers who have contributed to the Butterfly theme!
 
 ## ⭐ Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=jerryc127/hexo-theme-butterfly&type=Date)](https://star-history.com/#jerryc127/hexo-theme-butterfly&Date)
+[![Star History Chart](https://star-history.dera.page/svg?repos=jerryc127/hexo-theme-butterfly&type=Date)](https://star-history.dera.page/#jerryc127/hexo-theme-butterfly&Date)
 
 ## 🤝 Building a Better Theme Together
 

@@ -179,6 +179,7 @@ module.exports = {
       enable: true,
       limit: 40,
       color: false,
+      custom_colors: null,
       orderby: 'random',
       order: 1,
       sort_order: null
@@ -290,10 +291,10 @@ module.exports = {
   share: {
     use: 'sharejs',
     sharejs: {
-      sites: 'facebook,twitter,wechat,weibo,qq'
+      sites: 'facebook,x,wechat,weibo,qq'
     },
     addtoany: {
-      item: 'facebook,twitter,wechat,sina_weibo,facebook_messenger,email,copy_link'
+      item: 'facebook,x,wechat,sina_weibo,facebook_messenger,email,copy_link'
     }
   },
   comments: {
@@ -377,6 +378,7 @@ module.exports = {
     server: null,
     site: null,
     visitor: false,
+    vote: false,
     option: null
   },
   chat: {
@@ -392,6 +394,9 @@ module.exports = {
   },
   crisp: {
     website_id: null
+  },
+  knocket: {
+    identifier: null
   },
   google_tag_manager: {
     tag_id: null,
@@ -522,7 +527,9 @@ module.exports = {
     theme: {
       light: 'default',
       dark: 'dark'
-    }
+    },
+    open_in_new_tab: true,
+    zoom_pan: true
   },
   chartjs: {
     enable: false,
@@ -548,10 +555,6 @@ module.exports = {
   pjax: {
     enable: false,
     exclude: null
-  },
-  aplayerInject: {
-    enable: false,
-    per_page: true
   },
   snackbar: {
     enable: false,
@@ -579,7 +582,10 @@ module.exports = {
     enable: true,
     option: null
   },
-  structured_data: false,
+  structured_data: {
+    enable: false,
+    alternate_name: null
+  },
   css_prefix: true,
   inject: {
     head: null,
@@ -588,7 +594,7 @@ module.exports = {
   CDN: {
     internal_provider: 'local',
     third_party_provider: 'jsdelivr',
-    version: false,
+    version: true,
     custom_format: null,
     option: null
   }

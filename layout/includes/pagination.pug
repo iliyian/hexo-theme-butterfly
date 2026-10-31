@@ -19,7 +19,7 @@ if page.total !== 1
 
           a.pagination-related(class=className href=url_for(direction.path) title=direction.title)
             if direction.cover_type === 'img'
-              img.cover(src=url_for(direction.cover) onerror=`onerror=null;src='${url_for(theme.error_img.post_page)}'` alt=`cover of ${key === 'prev' ? 'previous' : 'next'} post`)
+              img.cover(src=url_for(direction.pagination_cover || direction.cover) onerror=`onerror=null;src='${url_for(theme.error_img.post_page)}'` alt=`cover of ${key === 'prev' ? 'previous' : 'next'} post`)
             else
               .cover(style=`background: ${direction.cover || 'var(--default-bg-color)'}`)
 
